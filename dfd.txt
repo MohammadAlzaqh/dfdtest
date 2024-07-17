@@ -1,0 +1,20 @@
+@startuml
+title Space Mission DFD thiny - MA
+actor Astronaut as A
+actor MissionControl as MC
+actor GroundStation as GS
+entity Spacecraft as SC
+rectangle "Mission Control Center" as MCC {
+    rectangle "Mission Planning" as MP
+    rectangle "Telemetry Monitoring" as TM
+    rectangle "Command Handling" as CH
+}
+A --> MP : Mission Instructions
+MP --> TM : Telemetry Data
+TM --> CH : Analyzed Telemetry
+CH --> SC : Commands
+CH --> GS : Telemetry
+MC --> MP : Plans Mission
+MC --> TM : Monitors Telemetry
+MC --> CH : Sends Commands
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Astronaut as A
+actor MissionControl as MC
+actor GroundStation as GS
+actor Spacecraft as SC
+rectangle "Space Mission System" as SMS {
+    usecase "Plan Mission" as UC1
+    usecase "Monitor Telemetry" as UC2
+    usecase "Receive Telemetry" as UC3
+    usecase "Send Commands" as UC4
+}
+A --> UC1 : Provides mission goals
+MC --> UC1 : Plans mission details
+MC --> UC2 : Monitors telemetry
+UC3 --> GS : Telemetry Data
+UC4 --> SC : Commands
+SC --> GS : Telemetry
+UC1 ..> UC2 : Include
+UC2 ..> UC3 : Include
+UC3 ..> UC4 : Include
+@enduml
