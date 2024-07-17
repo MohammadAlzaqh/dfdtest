@@ -1,8 +1,8 @@
 @startuml
 title Space Mission DFD thiny - MA
-actor Astronaut as A
-actor MissionControl as MC
-actor GroundStation as GS
+entity Astronaut as A
+entity MissionControl as MC
+entity GroundStation as GS
 entity Spacecraft as SC
 rectangle "Mission Control Center" as MCC {
     rectangle "Mission Planning" as MP
